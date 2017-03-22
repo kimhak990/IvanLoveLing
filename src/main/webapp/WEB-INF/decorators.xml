@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/decorators">
+
+    <!-- 예외 페이지 등록 -->
+    <!--<excludes>
+        <pattern>/**/ajax/*</pattern>
+        <pattern>/websrc/*</pattern>
+        <pattern>/file/*</pattern>
+        <pattern>/**/file/*</pattern>
+    </excludes>-->
+
+    <!-- 패널 추가  -->
+    <decorator name="top" page="/WEB-INF/views/admin/fragments/top.jsp"/>
+    <decorator name="left" page="/WEB-INF/views/admin/fragments/left.jsp"/>
+
+    <!-- 레이아웃 -->
+    <decorator name="layout" page="/WEB-INF/views/admin/fragments/layout.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- config context method -->
+    <settings>
+        <!-- jdbc - getGeneratedKeys get JDBC GeneratedKeys -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- default value:true
+         select name as title from table
+         -->
+        <setting name="useColumnLabel" value="true"/>
+        <!-- 开:Table(create_time) -> Entity(createTime) -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+</configuration>

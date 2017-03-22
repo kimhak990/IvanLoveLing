@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ivan.blog.dao.NoticeDao">
+    <!-- 시스템 공지 추가-->
+    <insert id="addNotice" parameterType="NoticePVO">
+        INSERT INTO t_notice
+                     (NOTICE_NAME,
+                      NOTICE_TEXT,
+                      CREATE_TIME,
+                      RELEASE_TIME,
+                      USE_YN)
+        VALUES (#{noticeName},#{noticeText},now(),now(),#{useYn})
+
+    </insert>
+
+    <!-- 시스템 공지 수정-->
+    <update id="updateNotice" parameterType="NoticePVO">
+          UPDATE T_NOTICE SET
+                  NOTICE_NAME = #{noticeName},
+                  NOTICE_TEXT = #{noticeText},
+                  UPDATE_TIME = Now(),
+                  USE_YN = #{useYn}
+          WHERE NOTICE_ID = #{noticeId}
+    </update>
+
+    <!-- 시스템 공지 카운팅-->
+    <select id="selectNoticeCount" resultType="Integer" parameterType="NoticePVO">
+        SELECT COUNT(NOTICE_ID) FROM T_NOTICE
+        WHERE   1=1
+        <if test="useYn != null and useYn != ''"> AND USE_YN = #{useYn} </if>
+        <if test="noticeName != null and noticeName !=''">AND NOTICE_NAME LIKE CONCAT(#{noticeName} , '%')</if>
+    </select>
+
+    <!-- 시스템 공지 리스트-->
+    <select id="selectNoticeList" parameterType="NoticePVO" resultType="NoticePVO">
+        SELECT   NOTICE_ID,
+                  NOTICE_NAME,
+                  NOTICE_TEXT,
+                  CREATE_TIME,
+                  RELEASE_TIME,
+                  USE_YN
+        FROM     T_NOTICE
+        WHERE     1 = 1
+        <if test="useYn != null and useYn != ''"> AND USE_YN = #{useYn} </if>
+        <if test="noticeName != null and noticeName !=''">AND NOTICE_NAME LIKE CONCAT(#{noticeName} , '%')</if>
+        ORDER BY CREATE_TIME DESC
+        LIMIT #{pageIndex}, #{pageSize}
+    </select>
+
+    <!-- 시스템 공지 상세-->
+    <select id="selectNoticeInfo" parameterType="NoticePVO" resultType="NoticePVO">
+        SELECT   NOTICE_ID,
+                  NOTICE_NAME,
+                  NOTICE_TEXT,
+                  CREATE_TIME,
+                  RELEASE_TIME,
+                  USE_YN
+        FROM     T_NOTICE
+        WHERE     NOTICE_ID = #{noticeId}
+    </select>
+
+    <!-- 공지사항 삭제 -->
+    <update id="deleteNotice" parameterType="NoticePVO">
+        UPDATE T_NOTICE SET
+                USE_YN = #{useYn},
+                UPDATE_TIME = Now()
+        WHERE   NOTICE_ID =  #{noticeId}
+    </update>
+</mapper>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ivan.blog.dao.FrontMenuDao">
+
+    <select id="selectFrontMenuList" parameterType="FrontMenuPVO" resultType="FrontMenuPVO">
+        SELECT     FRONTMENU_ID,
+                    FRONTMENU_NAME,
+                    DEPTH,
+                    PARENT,
+                    CREATE_TIME,
+                    USE_YN
+        FROM       T_FRONTMENU
+        WHERE      1=1
+        <if test="frontMenuName != null and frontMenuName != ''">AND FRONTMENU_NAME LIKE CONCAT(#{frontMenuName} , '%')</if>
+        <if test="useYn != null and useYn != ''">AND USE_YN  = #{useYn}</if>
+        ORDER BY CREATE_TIME DESC
+        LIMIT #{pageIndex}, #{pageSize}
+    </select>
+
+    <select id="selectFrontMenuCount" resultType="Integer" parameterType="FrontMenuPVO" >
+        SELECT     COUNT(FRONTMENU_ID)
+        FROM       T_FRONTMENU
+        WHERE      1=1
+        <if test="frontMenuName != null and frontMenuName != ''">AND FRONTMENU_NAME LIKE CONCAT(#{frontMenuName} , '%')</if>
+        <if test="useYn != null and useYn != ''">AND USE_YN  = #{useYn}</if>
+    </select>
+
+    <insert id="addFrontMenu" parameterType="FrontMenuPVO">
+        INSERT INTO T_FRONTMENU
+        (
+          FRONTMENU_NAME,
+          DEPTH,
+          PARENT,
+          CREATE_TIME,
+          USE_YN
+        )
+        VALUES
+         (
+         #{frontMenuName},
+         #{depth},
+         #{parent},
+         now(),
+         #{useYn}
+         )
+    </insert>
+
+    <update id="updateFrontMenu" parameterType="FrontMenuPVO">
+        UPDATE T_FRONTMENU SET
+          FRONTMENU_NAME = #{frontMenuName},
+          depth = #{depth},
+          parent = #{parent},
+          UPDATE_TIME = Now(),
+          USE_YN = #{useYn}
+        WHERE FRONTMENU_ID = #{frontMenuId}
+    </update>
+
+    <update id="deleteFrontMenu" parameterType="FrontMenuPVO">
+        UPDATE T_FRONTMENU SET
+        UPDATE_TIME = Now(),
+        USE_YN = #{useYn}
+        WHERE FRONTMENU_ID = #{frontMenuId}
+    </update>
+
+    <select id="selectFrontMenuInfo" parameterType="String" resultType="FrontMenuPVO">
+        SELECT FRONTMENU_ID,
+                FRONTMENU_NAME,
+                DEPTH,
+                PARENT,
+                USE_YN,
+                CREATE_TIME
+        FROM    T_FRONTMENU
+        WHERE   FRONTMENU_ID = #{frontMenuId}
+    </select>
+</mapper>

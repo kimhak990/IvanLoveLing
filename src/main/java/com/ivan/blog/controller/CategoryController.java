@@ -19,6 +19,9 @@ public class CategoryController {
 
     @RequestMapping("/cateList")
     public void selectCateList(){
+
+        String testGit = "null";
+
         System.out.println("test MVC.... ing.");
         List<CategoryPVO> cateList= cateService.selectCateList();
         if(cateList == null){

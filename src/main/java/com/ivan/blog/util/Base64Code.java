@@ -1,4 +1,4 @@
-package com.ivan.blog.common;
+package com.ivan.blog.util;
 
 import org.apache.commons.codec.binary.Base64;
 /**

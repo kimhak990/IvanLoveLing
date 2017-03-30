@@ -1,4 +1,4 @@
-package com.ivan.blog.common;
+package com.ivan.blog.util;
 
 import com.ivan.blog.params.UploadFileVO;
 import org.apache.commons.io.FilenameUtils;

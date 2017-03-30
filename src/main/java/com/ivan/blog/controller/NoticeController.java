@@ -1,6 +1,6 @@
 package com.ivan.blog.controller;
 
-import com.ivan.blog.common.PageUtil;
+import com.ivan.blog.util.PageUtil;
 import com.ivan.blog.params.NoticePVO;
 import com.ivan.blog.service.NoticeService;
 import org.slf4j.Logger;

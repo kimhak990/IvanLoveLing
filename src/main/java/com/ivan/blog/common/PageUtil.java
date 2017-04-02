@@ -1,4 +1,4 @@
-package com.ivan.blog.util;
+package com.ivan.blog.common;
 
 import com.ivan.blog.params.PageVO;
 

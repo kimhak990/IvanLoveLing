@@ -1,6 +1,6 @@
 package com.ivan.blog.controller;
 
-import com.ivan.blog.util.PageUtil;
+import com.ivan.blog.common.PageUtil;
 import com.ivan.blog.params.FrontMenuPVO;
 import com.ivan.blog.service.FrontMenuService;
 import org.slf4j.Logger;

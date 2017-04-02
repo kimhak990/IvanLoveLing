@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/.idea/compiler.xml" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -9,11 +12,8 @@
         <module name="ivanblog" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="ivanblog" target="1.8" />
+    <bytecodeTargetLevel>
+      <module name="ivanblog" target="1.6" />
     </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
   </component>
 </project>

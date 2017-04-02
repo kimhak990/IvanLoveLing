@@ -1,6 +1,5 @@
 package com.ivan.blog.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.ivan.blog.params.CategoryPVO;
 import com.ivan.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

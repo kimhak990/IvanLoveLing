@@ -56,9 +56,9 @@ public class FrontMenuController {
         return "/admin/frontmenu/updateFrontMenu";
     }
 
-    @RequestMapping(value = "updageFrontMenu")
+    @RequestMapping(value = "updateFrontMenu")
     @ResponseBody
-    public Map<String,Object> updageFrontMenu(@ModelAttribute FrontMenuPVO frontMenuPVO){
+    public Map<String,Object> updateFrontMenu(@ModelAttribute FrontMenuPVO frontMenuPVO){
         return frontMenuService.updateFrontMenu(frontMenuPVO);
     }
 

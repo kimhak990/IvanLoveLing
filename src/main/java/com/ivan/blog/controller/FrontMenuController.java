@@ -58,7 +58,12 @@ public class FrontMenuController {
 
     @RequestMapping(value = "updateFrontMenu")
     @ResponseBody
-    public Map<String,Object> updateFrontMenu(@ModelAttribute FrontMenuPVO frontMenuPVO){
+    public Map<String,Object> updateFrontMenu(@ModelAttribute("frontMenuPVO") FrontMenuPVO frontMenuPVO){
+        logger.debug("check FrontMenuPvo value " , frontMenuPVO.getFrontMenuName());
+        logger.debug("check FrontMenuPvo value " , frontMenuPVO.getFrontMenuId());
+        logger.debug("check FrontMenuPvo value " , frontMenuPVO.getParent());
+        logger.debug("check FrontMenuPvo value " , frontMenuPVO.getDepth());
+        logger.debug("check FrontMenuPvo value " , frontMenuPVO.getUseYn());
         return frontMenuService.updateFrontMenu(frontMenuPVO);
     }
 

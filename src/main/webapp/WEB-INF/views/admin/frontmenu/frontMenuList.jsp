@@ -40,22 +40,22 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>메뉴 명 :</label>
-                                                <input type="text" class="form-control" id="noticeName" name="noticeName" value="${noticePVO.noticeName}">
+                                                <input type="text" class="form-control" id="frontMenuName" name="frontMenuName" value="${frontMenuPVO.frontMenuName}">
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>카테고리 뎁스 :</label>
-                                                <input type="text" class="form-control" id="datepicker1">
+                                                <input type="text" class="form-control" id="depth" name="depth" value="${frontMenuPVO.depth}">
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>노출 여부</label>
                                                 <select class="form-control" id="useYn" name="useYn">
-                                                    <option value="" <c:if test="${noticePVO.useYn eq '' or noticePVO.useYn eq null}">selected</c:if> >전체</option>
-                                                    <option value="Y" <c:if test="${noticePVO.useYn eq 'Y'}">selected</c:if> >노출</option>
-                                                    <option value="N" <c:if test="${noticePVO.useYn eq 'N'}">selected</c:if> >비노출</option>
+                                                    <option value="" <c:if test="${frontMenuPVO.useYn eq '' or frontMenuPVO.useYn eq null}">selected</c:if> >전체</option>
+                                                    <option value="Y" <c:if test="${frontMenuPVO.useYn eq 'Y'}">selected</c:if> >노출</option>
+                                                    <option value="N" <c:if test="${frontMenuPVO.useYn eq 'N'}">selected</c:if> >비노출</option>
                                                 </select>
                                             </div>
                                         </div>

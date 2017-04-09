@@ -40,7 +40,7 @@
 
                             <!-- text input -->
                             <div class="form-group">
-                                <label>Text</label>
+                                <label>Menu Name</label>
                                 <input type="text" class="form-control" id="frontMenuName" name="frontMenuName" value="${frontMenuInfo.frontMenuName}">
                             </div>
 
@@ -58,10 +58,14 @@
                             </div>
                             <!-- textarea -->
                             <div class="form-group">
+                                <label>Parent depth</label>
+                                <input type="text" class="form-control" id="parent" name="parent" value="${frontMenuInfo.parent}">
+                            </div>
+                            <div class="form-group">
                                 <label>depth</label>
                                 <input type="text" class="form-control" id="depth" name="depth" value="${frontMenuInfo.depth}">
                             </div>
-                            <button type="button" class="btn btn-success btn-sm" id="updateButton">등록</button>
+                            <button type="button" class="btn btn-success btn-sm" id="updateButton">수정</button>
                             <button  class="btn btn-danger btn-sm" id="cancelButton">취소</button>
 
                         </div><!-- /.box-body -->

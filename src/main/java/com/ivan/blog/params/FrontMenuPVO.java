@@ -5,11 +5,11 @@ package com.ivan.blog.params;
  */
 public class FrontMenuPVO extends PageVO{
     String frontMenuId;
-    String FrontMenuName;
+    String frontMenuName;
     String depth;
     int parent;
     String createTime;
-    String UpdateTime;
+    String updateTime;
     String useYn;
 
     public String getFrontMenuId() {
@@ -21,11 +21,11 @@ public class FrontMenuPVO extends PageVO{
     }
 
     public String getFrontMenuName() {
-        return FrontMenuName;
+        return frontMenuName;
     }
 
     public void setFrontMenuName(String frontMenuName) {
-        FrontMenuName = frontMenuName;
+        this.frontMenuName = frontMenuName;
     }
 
     public String getDepth() {
@@ -53,11 +53,11 @@ public class FrontMenuPVO extends PageVO{
     }
 
     public String getUpdateTime() {
-        return UpdateTime;
+        return updateTime;
     }
 
     public void setUpdateTime(String updateTime) {
-        UpdateTime = updateTime;
+        this.updateTime = updateTime;
     }
 
     public String getUseYn() {

@@ -17,7 +17,7 @@ $(function () {
 
     /* 공지사항 수정 */
     $("#updateButton").click(function () {
-        var form = $("#frontMenuForm").serialize();
+        var form = $("#listForm").serialize();
 
         doAjax("/frontMenu/updateFrontMenu",form,function (result) {
             if(result.code != null && result.code != "" && result.code != 0){
@@ -64,9 +64,9 @@ function search() {
 function updateFrontMenu(id) {
     var url = "/frontMenu/frontMenuInfo";
     $("#frontMenuId").val(id);
-    $('#paramsId')[0].method = "get";
-    $('#paramsId')[0].action = url;
-    $('#paramsId')[0].submit();
+    $('#listForm')[0].method = "get";
+    $('#listForm')[0].action = url;
+    $('#listForm')[0].submit();
     //frmSubmit(url);
 }
 function frmSubmit(url) {
